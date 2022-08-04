@@ -13,9 +13,14 @@ impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.width > other.width
     }
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size,
+        }
+    }
 }
 fn main() {
-    let scale = 2;
     let rect1 = Rectangle {
         width: 30,
         height: 50,
@@ -28,6 +33,7 @@ fn main() {
         width: 60,
         height: 45,
     };
+    let rect4 = Rectangle::square(3);
 
     println!("area is {}", rect1.area());
     if rect1.width() {
@@ -38,4 +44,5 @@ fn main() {
     }
     println!("Can rect1 holds rect2? {}", rect1.can_hold(&rect2));
     println!("Can rect1 holds rect3? {}", rect1.can_hold(&rect3));
+    println!("rect4 is a square rectangle {:?}", rect4);
 }
