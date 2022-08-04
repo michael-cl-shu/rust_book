@@ -10,14 +10,16 @@ impl Rectangle {
     fn width(&self) -> bool {
         self.width > 0
     }
-    fn can_hold(&self, other: &Rectangle) -> bool {
-        self.width > other.width && self.width > other.width
-    }
     fn square(size: u32) -> Rectangle {
         Rectangle {
             width: size,
             height: size,
         }
+    }
+}
+impl Rectangle {
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.width > other.width
     }
 }
 fn main() {
