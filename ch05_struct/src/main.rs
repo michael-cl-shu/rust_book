@@ -1,12 +1,13 @@
-fn main() {
-    let rect1 = (30, 50);
-
-    println!(
-        "The area of the rectangle is {} square pixels. ",
-        area(rect1)
-    );
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
 }
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
 
-fn area(dimensions: (u32, u32)) -> u32 {
-    dimensions.0 * dimensions.1
+    println!("rect is {:?}", rect1);
 }
